@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
-*main - Beginning point of a Program to print alphabet letter followed by new line
+*main - Beginning point
 *
 *Return: return 0
 */
