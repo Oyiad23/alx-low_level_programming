@@ -3,10 +3,9 @@
 /**
 *main - Beginning point of a Program to print alphabet letter followed by new line
 *
-*Return: return 0 (exit after success)
+*Return: 0 (success)
 */
 int main(void)
-
 {
 	int alphabet;
 	
