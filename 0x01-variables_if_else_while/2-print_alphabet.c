@@ -3,7 +3,7 @@
 /**
 *main - Beginning point of a Program to print alphabet letter followed by new line
 *
-*Return: 0 (success)
+*Return: return 0
 */
 int main(void)
 {
