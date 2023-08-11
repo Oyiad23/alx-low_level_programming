@@ -1,40 +1,29 @@
+#include <stdio.h>
 /**
- * main - Prints all combinations of two digits with,
- * and space followed by new line
- *
- * Return: Always 0 (success)
- */
+*main - Prints all combinations of two digits with,
+* and space followed by new line
+*
+*Return: returns 0
+*/
 int main(void)
-
 {
+	int digit1, digit2;
 
-	int i, j;
-
-	for (i = 48; i < 58; i++)
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
+		{
 
-	for (j = 48; j < 58; j++)
-	{
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
 
-	if (i < j)
-	{
-		putchar(i);
-		putchar(j);
+			if (digit1 == 8 && digit2 == 9)
+				continue;
 
-	if (i != 56 || j != 57)
-	{
-		putchar(',');
-		putchar(' ');
+			putchar(',');
+			putchar(' ');
+		}
 	}
-
-	}
-
-	}
-
-	}
-
 	putchar('\n');
-
 	return (0);
-
 }
