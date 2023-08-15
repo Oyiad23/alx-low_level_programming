@@ -3,12 +3,13 @@
 /**
  * main - program prints text as output
  *
- * Return: 0
+ * Return: 0 (success)
  */
 
 int main(void)
 {
-	printf("_putchar");
+	int result =  _putchar;
+		printf('result\n');
 
 	return (0);
 }
