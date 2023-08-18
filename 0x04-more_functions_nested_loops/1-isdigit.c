@@ -3,12 +3,12 @@
 /**
  * _isdigit - checks whether it is a digit or not
  * @num: int to be checked
- * Return: 1 if num is a digit, 0 otherwise
+ * Return: 1 if num is a digit, 0 if not
  */
 
-int _isdigit(int c)
+int _isdigit(int num)
 {
-	if ((c >= 48) && (c <= 57))
+	if ((num >= 48) && (num <= 57))
 	return (1);
 
 	return (0);
