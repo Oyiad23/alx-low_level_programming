@@ -3,11 +3,10 @@
 #include <time.h>
 
 /**
- *main - a program that generates a random password
+ *main - a  program that generates a random password
  *
  *Return: the generated password
  */
-
 int main(void)
 {
 char c;
