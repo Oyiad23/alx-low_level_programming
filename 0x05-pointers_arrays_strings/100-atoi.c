@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  *_strcpy - copie the string
  *
@@ -8,6 +9,7 @@
  *
  *Return: the parameter dest.
  */
+
 char *_strcpy(char *dest, char *src)
 {
 	int n = 0;
