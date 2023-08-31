@@ -1,47 +1,29 @@
-i#include "main.h"
+#include "main.h"
 
 /**
- * palindrome_ret - returns length of a
- * @a: string
- * @l: integer to count length
+ * wildcmp - compares two strings and returns 1 if the strings
+ * can be considered identical, otherwise return 0.
+ * @s1: string to compare to
+ * @s2: string with wild character
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int palindrome_ret(char *a, int l)
+int wildcmp(char *s1, char *s2)
 {
-	if (*a == 0)
-		return (l - 1);
-	return (palindrome_ret(a + 1, l + 1));
-}
-/**
- * palindrome_comp - compares string vs string reverse
- * @a: string
- * @l: length
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
-int palindrome_comp(char *a, int l)
-{
-	if (*a != *(a + l))
-		return (0);
-	else if (*a == 0)
+	if (*s1 == '\0' && *s2 == '\0')
 		return (1);
-	return (palindrome_comp(a + 1, l - 2));
-}
-/**
- * is_palindrome - checks if a string is a palindrome
- * @s: string to evaluate
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int is_palindrome(char *s)
-{
-	int l;
 
-	l = palindrome_ret(s, 0);
-	return (palindrome_comp(s, l));
+	if (*s1 == *s2)
+		return (wildcmp(s1 + 1, s2 + 1));
+
+	if (*s2 == '*')
+	{
+		if (*s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0')
+			return (0);
+		if (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2))
+			return (1);
+	}
+
+	return (0);
 }
