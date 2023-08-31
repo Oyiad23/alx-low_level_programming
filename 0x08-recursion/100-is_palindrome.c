@@ -1,31 +1,39 @@
 #include "main.h"
-
 /**
- * prime2 - Makes possible to evaluate from 1 to n
- * @a: same number as n
- * @b: number that iterates from 1 to n
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _strlen_recursion - Prints the length of a string.
+ * @s: the string to be printed
+ * Return: the length of string
  */
-int prime2(int a, int b)
+int _strlen_recursion(char *s)
 {
-	if (a == b)
-		return (1);
-	else if (a % b == 0)
-		return (0);
-	return (prime2(a, b + 1));
+	if (s[0] != '\0')
+		return (1 + _strlen_recursion(s + 1));
+	return (0);
 }
 /**
- * is_prime_number - checks if a number is prime
- * @n: Number Integer
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * pal_checker - check if s is palindrome.
+ * @s: string base address.
+ * @i: left index.
+ * @j: rigth index.
+ * Return: 1 if s is palindrome, 0 otherwise.
  */
-int is_prime_number(int n)
+int pal_checker(char *s, int i, int j)
 {
-	if (n <= 1)
+	if (s[i] == s[j])
+		if (i > j / 2)
+			return (1);
+		else
+			return (pal_checker(s, i + 1, j - 1));
+	else
 		return (0);
-	return (prime2(n, 2));
+}
+/**
+ * is_palindrome - check if s is palindrome
+ * @s: base address for string.
+ *
+ * Return: 1 if n is prime, 0 otherwise.
+ */
+int is_palindrome(char *s)
+{
+	return (pal_checker(s, 0, _strlen_recursion(s) - 1));
 }
