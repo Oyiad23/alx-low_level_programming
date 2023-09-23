@@ -3,8 +3,8 @@
 void __attribute__((constructor)) tortoise_hare_race(void);
 
 /**
- * hare - Prints a string before the
- *   main function is executed.
+ * tortoise_hare_race - Prints a string before the
+ * main function is executed.
  */
 void tortoise_hare_race(void)
 {
