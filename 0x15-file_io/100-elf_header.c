@@ -9,7 +9,7 @@
 
 void print_addr(char *ptr)
 {
-int x;
+int z;
 int num;
 char pri_add;
 
@@ -20,12 +20,12 @@ if (pri_add == '1')
 {
 	num = 26;
 	printf("80");
-	for (x = num; x >= 22; x--)
+	for (z = num; z >= 22; z--)
 	{
-		if (ptr[x] > 0)
-			printf("%x", ptr[x]);
-		else if (ptr[x] < 0)
-			printf("%x", 256 + ptr[x]);
+		if (ptr[z] > 0)
+			printf("%x", ptr[z]);
+		else if (ptr[z] < 0)
+			printf("%x", 256 + ptr[z]);
 	}
 	if (ptr[7] == 6)
 		printf("00");
@@ -34,13 +34,13 @@ if (pri_add == '1')
 if (pri_add == '2')
 {
 	num = 26;
-	for (x = num; x > 23; x--)
+	for (z = num; z > 23; z--)
 	{
-		if (ptr[x] >= 0)
-			printf("%02x", ptr[x]);
+		if (ptr[z] >= 0)
+			printf("%02x", ptr[z]);
 
-		else if (ptr[x] < 0)
-			printf("%02x", 256 + ptr[x]);
+		else if (ptr[z] < 0)
+			printf("%02x", 256 + ptr[z]);
 
 	}
 }
@@ -77,7 +77,7 @@ else
 }
 
 /**
- * print_osabi - prints king
+ * print_osabi - prints osabi
  * @ptr: magic.
  * Return: no return.
  */
