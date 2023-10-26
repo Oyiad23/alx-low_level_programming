@@ -16,7 +16,7 @@ listint_t *find_listint_loop(listint_t *head)
 	first_node = head->next;
 	second_node = (head->next)->next;
 
-	while (first_node)
+	while (second_node)
 	{
 		if (first_node == second_node)
 		{
