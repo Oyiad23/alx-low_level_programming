@@ -15,7 +15,7 @@ void print_number(int n)
 		_putchar(45);
 		numb = -numb;
 	}
-	if (numb / 10)
+	if ((numb / 10)>0)
 	{
 		print_number(numb / 10);
 	}
